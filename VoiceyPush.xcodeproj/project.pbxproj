@@ -8,29 +8,41 @@
 
 /* Begin PBXBuildFile section */
 		965F12DE27FAFEEB00D6C131 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965F12DD27FAFEEB00D6C131 /* AVFoundation.framework */; };
-		965F12E127FB093B00D6C131 /* MainHelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F12E027FB093B00D6C131 /* MainHelperFunctions.swift */; };
+		965F12E127FB093B00D6C131 /* DatabaseFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F12E027FB093B00D6C131 /* DatabaseFunctions.swift */; };
 		96BB306327FAEC5E0038DF46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB306227FAEC5E0038DF46 /* AppDelegate.swift */; };
 		96BB306527FAEC5E0038DF46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB306427FAEC5E0038DF46 /* SceneDelegate.swift */; };
-		96BB306727FAEC5E0038DF46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB306627FAEC5E0038DF46 /* ViewController.swift */; };
 		96BB306A27FAEC5E0038DF46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96BB306827FAEC5E0038DF46 /* Main.storyboard */; };
 		96BB306D27FAEC5E0038DF46 /* VoiceyPush.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96BB306B27FAEC5E0038DF46 /* VoiceyPush.xcdatamodeld */; };
 		96BB306F27FAEC600038DF46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96BB306E27FAEC600038DF46 /* Assets.xcassets */; };
 		96BB307227FAEC600038DF46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96BB307027FAEC600038DF46 /* LaunchScreen.storyboard */; };
+		96FB7EB727FB2562001576A5 /* PushNotificationSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB7EB627FB2562001576A5 /* PushNotificationSetup.swift */; };
+		96FB7EB927FB25C6001576A5 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB7EB827FB25C6001576A5 /* NotificationHelper.swift */; };
+		96FB7EBB27FB2915001576A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96FB7EBA27FB2915001576A5 /* GoogleService-Info.plist */; };
+		96FB7EBD27FB2EDC001576A5 /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB7EBC27FB2EDC001576A5 /* MainProtocols.swift */; };
+		96FB7EC127FB3727001576A5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB7EC027FB3727001576A5 /* HomeViewController.swift */; };
+		FAFDF755EBB51B4D4EEEDD9D /* Pods_VoiceyPush.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7D8D772553C14ACBA31C2C /* Pods_VoiceyPush.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F7D8D772553C14ACBA31C2C /* Pods_VoiceyPush.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoiceyPush.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		536E23C83FB0AA965B120A91 /* Pods-VoiceyPush.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceyPush.debug.xcconfig"; path = "Target Support Files/Pods-VoiceyPush/Pods-VoiceyPush.debug.xcconfig"; sourceTree = "<group>"; };
+		6129CAD480EA47FDCADDF48D /* Pods-VoiceyPush.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceyPush.release.xcconfig"; path = "Target Support Files/Pods-VoiceyPush/Pods-VoiceyPush.release.xcconfig"; sourceTree = "<group>"; };
 		965F12DD27FAFEEB00D6C131 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		965F12DF27FB085300D6C131 /* VoiceyPush.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VoiceyPush.entitlements; sourceTree = "<group>"; };
-		965F12E027FB093B00D6C131 /* MainHelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHelperFunctions.swift; sourceTree = "<group>"; };
+		965F12E027FB093B00D6C131 /* DatabaseFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseFunctions.swift; sourceTree = "<group>"; };
 		96BB305F27FAEC5E0038DF46 /* VoiceyPush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceyPush.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BB306227FAEC5E0038DF46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96BB306427FAEC5E0038DF46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		96BB306627FAEC5E0038DF46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		96BB306927FAEC5E0038DF46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96BB306C27FAEC5E0038DF46 /* VoiceyPush.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VoiceyPush.xcdatamodel; sourceTree = "<group>"; };
 		96BB306E27FAEC600038DF46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96BB307127FAEC600038DF46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96BB307327FAEC600038DF46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96FB7EB627FB2562001576A5 /* PushNotificationSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationSetup.swift; sourceTree = "<group>"; };
+		96FB7EB827FB25C6001576A5 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
+		96FB7EBA27FB2915001576A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		96FB7EBC27FB2EDC001576A5 /* MainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProtocols.swift; sourceTree = "<group>"; };
+		96FB7EC027FB3727001576A5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,16 +51,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				965F12DE27FAFEEB00D6C131 /* AVFoundation.framework in Frameworks */,
+				FAFDF755EBB51B4D4EEEDD9D /* Pods_VoiceyPush.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7BB27F4CDFFEC47B9D933865 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				536E23C83FB0AA965B120A91 /* Pods-VoiceyPush.debug.xcconfig */,
+				6129CAD480EA47FDCADDF48D /* Pods-VoiceyPush.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		965F12DC27FAFEEB00D6C131 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				965F12DD27FAFEEB00D6C131 /* AVFoundation.framework */,
+				2F7D8D772553C14ACBA31C2C /* Pods_VoiceyPush.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -59,6 +82,7 @@
 				96BB306127FAEC5E0038DF46 /* VoiceyPush */,
 				96BB306027FAEC5E0038DF46 /* Products */,
 				965F12DC27FAFEEB00D6C131 /* Frameworks */,
+				7BB27F4CDFFEC47B9D933865 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,18 +97,38 @@
 		96BB306127FAEC5E0038DF46 /* VoiceyPush */ = {
 			isa = PBXGroup;
 			children = (
+				96FB7EBF27FB3701001576A5 /* MainStoryboard */,
+				96FB7EBE27FB3521001576A5 /* HelperClasses */,
 				965F12DF27FB085300D6C131 /* VoiceyPush.entitlements */,
 				96BB306227FAEC5E0038DF46 /* AppDelegate.swift */,
 				96BB306427FAEC5E0038DF46 /* SceneDelegate.swift */,
-				96BB306627FAEC5E0038DF46 /* ViewController.swift */,
-				96BB306827FAEC5E0038DF46 /* Main.storyboard */,
 				96BB306E27FAEC600038DF46 /* Assets.xcassets */,
 				96BB307027FAEC600038DF46 /* LaunchScreen.storyboard */,
 				96BB307327FAEC600038DF46 /* Info.plist */,
+				96FB7EBA27FB2915001576A5 /* GoogleService-Info.plist */,
 				96BB306B27FAEC5E0038DF46 /* VoiceyPush.xcdatamodeld */,
-				965F12E027FB093B00D6C131 /* MainHelperFunctions.swift */,
+				96FB7EBC27FB2EDC001576A5 /* MainProtocols.swift */,
 			);
 			path = VoiceyPush;
+			sourceTree = "<group>";
+		};
+		96FB7EBE27FB3521001576A5 /* HelperClasses */ = {
+			isa = PBXGroup;
+			children = (
+				965F12E027FB093B00D6C131 /* DatabaseFunctions.swift */,
+				96FB7EB627FB2562001576A5 /* PushNotificationSetup.swift */,
+				96FB7EB827FB25C6001576A5 /* NotificationHelper.swift */,
+			);
+			path = HelperClasses;
+			sourceTree = "<group>";
+		};
+		96FB7EBF27FB3701001576A5 /* MainStoryboard */ = {
+			isa = PBXGroup;
+			children = (
+				96BB306827FAEC5E0038DF46 /* Main.storyboard */,
+				96FB7EC027FB3727001576A5 /* HomeViewController.swift */,
+			);
+			path = MainStoryboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,9 +138,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96BB307627FAEC600038DF46 /* Build configuration list for PBXNativeTarget "VoiceyPush" */;
 			buildPhases = (
+				C3A5FFB7AFE96407491EB6C2 /* [CP] Check Pods Manifest.lock */,
 				96BB305B27FAEC5E0038DF46 /* Sources */,
 				96BB305C27FAEC5E0038DF46 /* Frameworks */,
 				96BB305D27FAEC5E0038DF46 /* Resources */,
+				3A7290A080BB861D70AAE17E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -146,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96BB307227FAEC600038DF46 /* LaunchScreen.storyboard in Resources */,
+				96FB7EBB27FB2915001576A5 /* GoogleService-Info.plist in Resources */,
 				96BB306F27FAEC600038DF46 /* Assets.xcassets in Resources */,
 				96BB306A27FAEC5E0038DF46 /* Main.storyboard in Resources */,
 			);
@@ -153,16 +200,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3A7290A080BB861D70AAE17E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VoiceyPush/Pods-VoiceyPush-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VoiceyPush/Pods-VoiceyPush-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VoiceyPush/Pods-VoiceyPush-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3A5FFB7AFE96407491EB6C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VoiceyPush-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		96BB305B27FAEC5E0038DF46 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96BB306727FAEC5E0038DF46 /* ViewController.swift in Sources */,
+				96FB7EBD27FB2EDC001576A5 /* MainProtocols.swift in Sources */,
+				96FB7EB727FB2562001576A5 /* PushNotificationSetup.swift in Sources */,
 				96BB306327FAEC5E0038DF46 /* AppDelegate.swift in Sources */,
-				965F12E127FB093B00D6C131 /* MainHelperFunctions.swift in Sources */,
+				96FB7EC127FB3727001576A5 /* HomeViewController.swift in Sources */,
+				965F12E127FB093B00D6C131 /* DatabaseFunctions.swift in Sources */,
 				96BB306D27FAEC5E0038DF46 /* VoiceyPush.xcdatamodeld in Sources */,
 				96BB306527FAEC5E0038DF46 /* SceneDelegate.swift in Sources */,
+				96FB7EB927FB25C6001576A5 /* NotificationHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +398,7 @@
 		};
 		96BB307727FAEC600038DF46 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 536E23C83FB0AA965B120A91 /* Pods-VoiceyPush.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -315,6 +408,7 @@
 				DEVELOPMENT_TEAM = DLG7YMAG67;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VoiceyPush/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = voicey;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -329,12 +423,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		96BB307827FAEC600038DF46 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6129CAD480EA47FDCADDF48D /* Pods-VoiceyPush.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -344,6 +439,7 @@
 				DEVELOPMENT_TEAM = DLG7YMAG67;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VoiceyPush/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = voicey;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -358,7 +454,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 import AVFoundation
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, URLSessionDownloadDelegate, URLSessionDelegate {
@@ -18,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var backgroundCompletionHandler: (() -> ())?
     var soundURL: URL?
     
+    let notificationHelper = NotificationHelper()
+    
     private lazy var backgroundURLSession: URLSession = {
         let config = URLSessionConfiguration.background(withIdentifier: "MainSession")
         config.isDiscretionary = true
@@ -27,7 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        FirebaseApp.configure()
+        
         return true
     }
 
@@ -47,7 +51,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         
+        guard let notificationType = userInfo["notificationType"] as? String else {
+            return
+        }
         
+        if notificationType == "soundDownloading" {
+            
+        }
+        
+        if notificationType == "soundPlaying" {
+            let soundURL = fetchSoundURLFromDocuments()
+            
+            prepareSoundPlayer(withSoundURL: soundURL)
+            
+            playAudio()
+        }
         
     }
     
@@ -92,7 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
-    func fetchSoundFromDocuments() -> URL {
+    func fetchSoundURLFromDocuments() -> URL {
         let uniqueFilePath = "\(notificationSoundName).mp3"
         
         let soundURL = getDocumentsDirectory().appendingPathComponent(uniqueFilePath)
@@ -100,20 +118,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return soundURL
     }
     
-    func prepareSoundPlayer() {
-        let soundURL = fetchSoundFromDocuments()
+    func prepareSoundPlayer(withSoundURL url: URL) {
         
         do {
-            try notificationSoundPlayer = AVAudioPlayer(contentsOf: soundURL)
+            try notificationSoundPlayer = AVAudioPlayer(contentsOf: url)
             notificationSoundPlayer?.prepareToPlay()
         } catch {
             print("error:", error.localizedDescription)
         }
     }
     
-    func playAudio(fileName: String) {
-        prepareSoundPlayer()
-        
+    func playAudio() {
         do {
             try AVAudioSession.sharedInstance().setCategory(.playAndRecord, options: [.duckOthers, .defaultToSpeaker])
             try AVAudioSession.sharedInstance().setActive(true)
@@ -139,7 +154,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         writeSoundURLToDocuments(url: location)
         
-        // send notification to self to trigger audio player??
+        notificationHelper.sendSoundPlayingNotificationToSelf()
     }
     
     func sendSoundPlayingNotificationToSelf() {
