@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         
         if notificationType == "soundDownloading" {
-            
+            downloadSoundFile()
         }
         
         if notificationType == "soundPlaying" {
@@ -154,11 +154,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         writeSoundURLToDocuments(url: location)
         
-        notificationHelper.sendSoundPlayingNotificationToSelf()
-    }
-    
-    func sendSoundPlayingNotificationToSelf() {
-        
+        notificationHelper.sendSoundPlayingNotificationToSelf(notifTitle: "hey man", notifBody: "hey man.", senderName: "mikez", soundDownloadURLString: nil)
     }
     
     func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {

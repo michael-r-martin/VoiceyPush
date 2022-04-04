@@ -8,7 +8,7 @@
 import Foundation
 import Firebase
 
-class DatabaseFunctions {
+class UploadHelper {
     
     let db = Firestore.firestore()
     let storageRef = Storage.storage().reference()
@@ -17,12 +17,8 @@ class DatabaseFunctions {
     
     var uploadedVoiceyDownloadURLString: String?
     
-    func uploadVoiceyToFirebase(voiceyName: String?, voiceyData: Data?) {
+    func uploadVoiceyToFirebase(voiceyName: String?, voiceyURL: URL) {
         guard let voiceyName = voiceyName else {
-            return
-        }
-        
-        guard let voiceyData = voiceyData else {
             return
         }
         
@@ -30,7 +26,7 @@ class DatabaseFunctions {
         
         let voiceyStorageRef = storageRef.child("\(voiceyUID).mp3")
         
-        voiceyStorageRef.putData(voiceyData, metadata: nil) { metadata, error in
+        voiceyStorageRef.putFile(from: voiceyURL, metadata: nil) { metadata, error in
             if let error = error {
                 print(error.localizedDescription)
                 

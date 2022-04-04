@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="HomeViewController" customModule="VoiceyPush" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="voicey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oy7-Sg-WGk">
+                                <rect key="frame" x="134.5" y="89" width="106" height="48"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="djK-BA-02k">
+                                <rect key="frame" x="49.5" y="294.5" width="276" height="78"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNa-F2-5gC">
+                                        <rect key="frame" x="0.0" y="0.0" width="276" height="78"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="record 🎤">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="recordButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="A2a-zx-idJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="hNa-F2-5gC" secondAttribute="trailing" id="FEw-Gi-lPZ"/>
+                                    <constraint firstItem="hNa-F2-5gC" firstAttribute="leading" secondItem="djK-BA-02k" secondAttribute="leading" id="Gw0-km-412"/>
+                                    <constraint firstItem="hNa-F2-5gC" firstAttribute="top" secondItem="djK-BA-02k" secondAttribute="top" id="Kqg-xZ-P3k"/>
+                                    <constraint firstAttribute="bottom" secondItem="hNa-F2-5gC" secondAttribute="bottom" id="YRq-MM-YZg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="1" green="0.94528261141224457" blue="0.81321968736113048" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="djK-BA-02k" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" multiplier="0.736" id="EO5-1h-wOr"/>
+                            <constraint firstItem="djK-BA-02k" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="IQf-AN-0IM"/>
+                            <constraint firstItem="oy7-Sg-WGk" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Xav-xg-wum"/>
+                            <constraint firstItem="djK-BA-02k" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="juA-sQ-Mah"/>
+                            <constraint firstItem="oy7-Sg-WGk" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="89" id="nht-kh-3pX"/>
+                            <constraint firstItem="djK-BA-02k" firstAttribute="height" secondItem="vDu-zF-Fre" secondAttribute="height" multiplier="0.116942" id="tqz-kl-uxT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="recordButton" destination="hNa-F2-5gC" id="KVV-GW-YQX"/>
+                        <outlet property="recordButtonView" destination="djK-BA-02k" id="cW5-t2-hIl"/>
+                        <outlet property="voiceyLabel" destination="oy7-Sg-WGk" id="Jrx-5M-Arb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-23.199999999999999" y="55.322338830584712"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
