@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		965F12DE27FAFEEB00D6C131 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965F12DD27FAFEEB00D6C131 /* AVFoundation.framework */; };
+		965F12E127FB093B00D6C131 /* MainHelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F12E027FB093B00D6C131 /* MainHelperFunctions.swift */; };
 		96BB306327FAEC5E0038DF46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB306227FAEC5E0038DF46 /* AppDelegate.swift */; };
 		96BB306527FAEC5E0038DF46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB306427FAEC5E0038DF46 /* SceneDelegate.swift */; };
 		96BB306727FAEC5E0038DF46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB306627FAEC5E0038DF46 /* ViewController.swift */; };
@@ -17,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		965F12DD27FAFEEB00D6C131 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		965F12DF27FB085300D6C131 /* VoiceyPush.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VoiceyPush.entitlements; sourceTree = "<group>"; };
+		965F12E027FB093B00D6C131 /* MainHelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHelperFunctions.swift; sourceTree = "<group>"; };
 		96BB305F27FAEC5E0038DF46 /* VoiceyPush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceyPush.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BB306227FAEC5E0038DF46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96BB306427FAEC5E0038DF46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,17 +38,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				965F12DE27FAFEEB00D6C131 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		965F12DC27FAFEEB00D6C131 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				965F12DD27FAFEEB00D6C131 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		96BB305627FAEC5E0038DF46 = {
 			isa = PBXGroup;
 			children = (
 				96BB306127FAEC5E0038DF46 /* VoiceyPush */,
 				96BB306027FAEC5E0038DF46 /* Products */,
+				965F12DC27FAFEEB00D6C131 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +73,7 @@
 		96BB306127FAEC5E0038DF46 /* VoiceyPush */ = {
 			isa = PBXGroup;
 			children = (
+				965F12DF27FB085300D6C131 /* VoiceyPush.entitlements */,
 				96BB306227FAEC5E0038DF46 /* AppDelegate.swift */,
 				96BB306427FAEC5E0038DF46 /* SceneDelegate.swift */,
 				96BB306627FAEC5E0038DF46 /* ViewController.swift */,
@@ -66,6 +82,7 @@
 				96BB307027FAEC600038DF46 /* LaunchScreen.storyboard */,
 				96BB307327FAEC600038DF46 /* Info.plist */,
 				96BB306B27FAEC5E0038DF46 /* VoiceyPush.xcdatamodeld */,
+				965F12E027FB093B00D6C131 /* MainHelperFunctions.swift */,
 			);
 			path = VoiceyPush;
 			sourceTree = "<group>";
@@ -143,6 +160,7 @@
 			files = (
 				96BB306727FAEC5E0038DF46 /* ViewController.swift in Sources */,
 				96BB306327FAEC5E0038DF46 /* AppDelegate.swift in Sources */,
+				965F12E127FB093B00D6C131 /* MainHelperFunctions.swift in Sources */,
 				96BB306D27FAEC5E0038DF46 /* VoiceyPush.xcdatamodeld in Sources */,
 				96BB306527FAEC5E0038DF46 /* SceneDelegate.swift in Sources */,
 			);
@@ -291,6 +309,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VoiceyPush/VoiceyPush.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DLG7YMAG67;
@@ -319,6 +338,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VoiceyPush/VoiceyPush.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DLG7YMAG67;

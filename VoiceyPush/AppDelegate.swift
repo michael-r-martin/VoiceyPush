@@ -7,12 +7,25 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, URLSessionDownloadDelegate, URLSessionDelegate {
+    
+    var notificationSoundPlayer: AVAudioPlayer?
+    var notificationSoundData: Data?
+    var notificationSoundName = "notificationSoundFile"
+    var backgroundCompletionHandler: (() -> ())?
+    var soundURL: URL?
+    
+    private lazy var backgroundURLSession: URLSession = {
+        let config = URLSessionConfiguration.background(withIdentifier: "MainSession")
+        config.isDiscretionary = true
+        config.sessionSendsLaunchEvents = true
+        config.shouldUseExtendedBackgroundIdleMode = true
+        return URLSession(configuration: config, delegate: self, delegateQueue: nil)
+    }()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
@@ -30,6 +43,111 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
+        
+        
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        
+        let path = paths[0]
+        
+        return path
+    }
+    
+    func downloadSoundFile() {
+        guard let soundURL = soundURL else {
+            return
+        }
+        
+        let backgroundTask = backgroundURLSession.downloadTask(with: soundURL)
+        backgroundTask.resume()
+    }
+    
+    func writeFileToDocuments() {
+        let uniqueFilePath = "\(notificationSoundName).mp3"
+        
+        let urlToWriteTo = getDocumentsDirectory().appendingPathComponent(uniqueFilePath)
+        
+        do {
+            try notificationSoundData?.write(to: urlToWriteTo)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func writeSoundURLToDocuments(url: URL) {
+        let uniqueFilePath = "\(notificationSoundName).mp3"
+        
+        let urlToWriteTo = getDocumentsDirectory().appendingPathComponent(uniqueFilePath)
+        
+        do {
+            try FileManager.default.moveItem(at: url, to: urlToWriteTo)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func fetchSoundFromDocuments() -> URL {
+        let uniqueFilePath = "\(notificationSoundName).mp3"
+        
+        let soundURL = getDocumentsDirectory().appendingPathComponent(uniqueFilePath)
+        
+        return soundURL
+    }
+    
+    func prepareSoundPlayer() {
+        let soundURL = fetchSoundFromDocuments()
+        
+        do {
+            try notificationSoundPlayer = AVAudioPlayer(contentsOf: soundURL)
+            notificationSoundPlayer?.prepareToPlay()
+        } catch {
+            print("error:", error.localizedDescription)
+        }
+    }
+    
+    func playAudio(fileName: String) {
+        prepareSoundPlayer()
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playAndRecord, options: [.duckOthers, .defaultToSpeaker])
+            try AVAudioSession.sharedInstance().setActive(true)
+            UIApplication.shared.beginReceivingRemoteControlEvents()
+        } catch {
+            print("error:", error.localizedDescription)
+        }
+        
+        notificationSoundPlayer?.play()
+    }
+    
+    func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
+        DispatchQueue.main.async {
+            guard let backgroundCompletionHandler = self.backgroundCompletionHandler else {
+                return
+            }
+            
+            backgroundCompletionHandler()
+        }
+    }
+    
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+        
+        writeSoundURLToDocuments(url: location)
+        
+        // send notification to self to trigger audio player??
+    }
+    
+    func sendSoundPlayingNotificationToSelf() {
+        
+    }
+    
+    func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
+        backgroundCompletionHandler = completionHandler
     }
 
     // MARK: - Core Data stack
